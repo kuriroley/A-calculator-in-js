@@ -1,3 +1,7 @@
+//variables... probably to use later
+let value1 = 0;
+let value2 = 0;
+let operator = '';
 // functions for calculator
 
 function add(a,b){
@@ -21,6 +25,12 @@ function operation(a,b,operator){
     }
     if(operator == '-'){
         return substract(a,b);
+    }
+    if(operator == '*'){
+        return multiply(a,b);
+    }
+    if(operator == '/'){
+        return divide(a,b);
     }
 }
 
