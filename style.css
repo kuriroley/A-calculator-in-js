@@ -20,12 +20,13 @@ text-align: center;
     max-height: 600px;
 }
 .cal-container{
+    border-radius: 5px;
     background-color: rgb(0, 0, 0);
     height: 450px;
     width: 300px;
 }
 .display{
-    width: auto;
+    width: 285px;
     background-color: rgb(102, 152, 93);
     height: 50px;
     text-align: end;
@@ -40,10 +41,25 @@ text-align: center;
     margin-top: 10px;
     height: 330px;
 }
+
+button:hover{
+    background-color: rgba(245, 244, 243, 0.68);
+    transition-duration: 0.2s;
+}
+
 .clear{
     background-color: brown;
-    color: white;
+    /* color: white; */
     /* font-size: 20px; */
+}
+.credits{
+    background-color: black;
+    margin-top: 10px;
+    margin-left: 90px;
+    color: white;
+    width: 150px;
+    height: 20px;
+    font-size: 15px;
 }
 
 

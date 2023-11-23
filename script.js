@@ -1,7 +1,10 @@
 //variables... probably to use later
+let displayValue = 0;
 let value1 = 0;
 let value2 = 0;
 let operator = '';
+
+
 // functions for calculator
 
 function add(a,b){
@@ -16,10 +19,13 @@ function multiply(a,b){
 function divide(a,b){
     return a / b;
 }
+function rootSquare(a){
+    return Math.sqrt(a);
+}
 
 //what if I pass this function as a high-order function?
 
-function operation(a,b,operator){
+function operate(a,operator,b){
     if(operator == '+'){
         return add(a,b);
     }
@@ -32,5 +38,7 @@ function operation(a,b,operator){
     if(operator == '/'){
         return divide(a,b);
     }
+    if(operator == 'v'){
+        return rootSquare(a)
+    }
 }
-
