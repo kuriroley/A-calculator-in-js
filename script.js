@@ -4,6 +4,35 @@ let value1 = 0;
 let value2 = 0;
 let operator = '';
 
+//dom elements
+const display = document.querySelector('.display')
+const clearButton = document.querySelector('.clear');
+const numbersButton = document.querySelector('.number');
+
+clearButton.addEventListener('click',()=>{
+    display.value= '';
+    display.textContent = 'borrado'
+})
+
+// numbersButton.addEventListener('click', ()=>{
+//     let numberValue = numbersButton.value;
+//     numberValue.foreach((number)=>{
+//         display.
+//     })
+
+// })
+
+
+
+
+
+
+
+
+
+
+
+
 
 // functions for calculator
 
