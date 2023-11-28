@@ -7,20 +7,36 @@ let operator = '';
 //dom elements
 const display = document.querySelector('.display')
 const clearButton = document.querySelector('.clear');
-const numbersButton = document.querySelector('.number');
+const buttonContainer = document.querySelector('.buttons-container');
+const numberButtons = document.querySelectorAll('.number');
 
-clearButton.addEventListener('click',()=>{
-    display.value= '';
-    display.textContent = 'borrado'
+//event listeners
+
+//using event delegation for buttons
+buttonContainer.addEventListener('click', (e)=>{
+    if(e.target && e.target.matches == 'button.number'){
+        console.log('number clicked');
+    }
 })
 
-// numbersButton.addEventListener('click', ()=>{
-//     let numberValue = numbersButton.value;
-//     numberValue.foreach((number)=>{
-//         display.
-//     })
+function doSomething(){
+    alert('aaaa');
+}
 
-// })
+
+//events for number buttons
+
+
+
+//for clearing button
+clearButton.addEventListener('click',()=>{
+    display.value= '';
+});
+
+
+
+
+
 
 
 
@@ -36,38 +52,38 @@ clearButton.addEventListener('click',()=>{
 
 // functions for calculator
 
-function add(a,b){
-    return a + b;
-}
-function substract(a,b){
-    return a - b;
-}
-function multiply(a,b){
-    return a * b;
-}
-function divide(a,b){
-    return a / b;
-}
-function rootSquare(a){
-    return Math.sqrt(a);
-}
+// function add(a,b){
+//     return a + b;
+// }
+// function substract(a,b){
+//     return a - b;
+// }
+// function multiply(a,b){
+//     return a * b;
+// }
+// function divide(a,b){
+//     return a / b;
+// }
+// function rootSquare(a){
+//     return Math.sqrt(a);
+// }
 
 //what if I pass this function as a high-order function?
 
-function operate(a,operator,b){
-    if(operator == '+'){
-        return add(a,b);
-    }
-    if(operator == '-'){
-        return substract(a,b);
-    }
-    if(operator == '*'){
-        return multiply(a,b);
-    }
-    if(operator == '/'){
-        return divide(a,b);
-    }
-    if(operator == 'v'){
-        return rootSquare(a)
-    }
-}
+// function operate(a,operator,b){
+//     if(operator == '+'){
+//         return add(a,b);
+//     }
+//     if(operator == '-'){
+//         return substract(a,b);
+//     }
+//     if(operator == '*'){
+//         return multiply(a,b);
+//     }
+//     if(operator == '/'){
+//         return divide(a,b);
+//     }
+//     if(operator == 'v'){
+//         return rootSquare(a)
+//     }
+// }

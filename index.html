@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Calculator in Javascript</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <section>
@@ -16,8 +17,8 @@
     <section class="cal-zone">
         <div class="cal-container">
             <!-- Display -->
-            <textarea class="display" id="inputtext" type="text" placeholder="0" maxlength="13"></textarea>
-
+            <textarea class="display" type="number" placeholder="0" maxlength="13"></textarea>
+            <!-- the button container-->
             <div class="buttons-container">
              <!-- First row -->
             <button class="clear" name="clear">C</button>
@@ -49,5 +50,5 @@
         </div>
     </section>
 </body>
-<script src="script.js"></script>
+
 </html>
