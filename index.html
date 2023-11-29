@@ -17,38 +17,42 @@
     <section class="cal-zone">
         <div class="cal-container">
             <!-- Display -->
-            <textarea class="display" type="number" placeholder="0" maxlength="13"></textarea>
+            <textarea class="display" type="number" placeholder="0" maxlength="13" value="0"></textarea>
             <!-- the button container-->
             <div class="buttons-container">
              <!-- First row -->
-            <button class="clear" name="clear">C</button>
-            <button class="operator" name="changeSign">±</button>
-            <button class="operator" name="percent">%</button>
-            <button class="operator" name="squareRoot">√</button>
+            <button class="clear" value="clear">C</button>
+            <button class="operator" value="changeSign">±</button>
+            <button class="operator" value="percent">%</button>
+            <button class="operator" value="squareRoot">√</button>
             <!-- Second row -->
-            <button class="number" name="seven">7</button>
-            <button class="number" name="eigth">8</button>
-            <button class="number" name="nine">9</button>
-            <button class="operator" name="division">/</button>
+            <button class="operand" value="7">7</button>
+            <button class="operand" value="8">8</button>
+            <button class="operand" value="9">9</button>
+            <button class="operator" value="/">/</button>
             <!-- Third row -->
-            <button class="number" name="four">4</button>
-            <button class="number" name="five">5</button>
-            <button class="number" name="six">6</button>
-            <button class="operator" name="multi">*</button>
+            <button class="operand" value="4">4</button>
+            <button class="operand" value="5">5</button>
+            <button class="operand" value="6">6</button>
+            <button class="operand" value="*">*</button>
             <!-- Fourth row -->
-            <button class="number" name="one">1</button>
-            <button class="number" name="two">2</button>
-            <button class="number" name="three">3</button>
-            <button class="operator" name="substract">-</button>
+            <button class="operand" value="1">1</button>
+            <button class="operand" value="2">2</button>
+            <button class="operand" value="3">3</button>
+            <button class="operator" value="-">-</button>
             <!-- Fifth row-->
-            <button class="zero" name="zero">0</button>
-            <button class="operator" name="decimalPoint">.</button>
-            <button class="operator" name="equal">=</button>
-            <button class="operator" name="addition">+</button>   
+            <button class="zero" value="0">0</button>
+            <button class="operator" value=".">.</button>
+            <button class="operator" value="=">=</button>
+            <button class="operator" value="+">+</button>   
             </div>
             <div class="credits">Made in Kuriroley</div>
         </div>
     </section>
+
+    <div class="logZone">
+        <p class="log"></p>
+    </div>
 </body>
 
 </html>
