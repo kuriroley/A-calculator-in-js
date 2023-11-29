@@ -3,7 +3,6 @@ let operand1 = 0;
 let operand2 = 0;
 let operator = '';
 
-
 //functions 
     //operations
 function add(a,b){return a + b}
@@ -12,7 +11,7 @@ function multiply(a,b){return a * b}
 function divide(a,b){return a / b}
 function rootSquare(a){return Math.sqrt(a)}
 
-    //main operate
+    //main operate function
 function operate(a,operator,b){
     if(operator == '+'){
         return add(a,b);
@@ -34,9 +33,40 @@ function operate(a,operator,b){
 const display = document.querySelector('.display')
 const clearButton = document.querySelector('.clear');
 const buttonContainer = document.querySelector('.buttons-container');
-const operand = document.querySelectorAll('.operand')
+const operand = document.querySelectorAll('.operand');
+const operators = document.querySelectorAll('.operator');
 const log = document.querySelector('.log');
+
+
 //event listeners
+//first forEach and then the eventlistener 
+operand.forEach((number)=>{
+    number.addEventListener('click', ()=>{
+        display.value = number.value
+
+    })
+});
+//for operators (test)
+operators.forEach((operator)=>{
+    let op = '';
+    operator.addEventListener('click',()=>{
+        if(operator.value == '='){
+            op = operator.value;
+        }
+        if(operator.value == '+'){
+            op = operator.value;
+        }
+        if(operator.value == '*'){
+            op = operator.value;
+        }
+        if(operator.value == '-'){
+            op = operator.value;
+        }
+    })
+})
+
+
+
 
 
 

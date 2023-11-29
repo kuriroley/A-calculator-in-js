@@ -34,7 +34,7 @@ text-align: center;
     margin: 5px;
     resize: none;
 }
-.buttons-container{
+.bContainer{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     background-color: rgb(0, 0, 0);
