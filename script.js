@@ -1,70 +1,61 @@
 //dom elements
 const display = document.querySelector('.display')
-const clearButton = document.querySelector('.clear');
-const buttonContainer = document.querySelector('.buttons-container');
+const clear = document.querySelector('.clear');
+const buttonContainer = document.querySelector('.bContainer');
 const operands = document.querySelectorAll('.operand');
 const operators = document.querySelectorAll('.operator');
+const equal = document.querySelector('.equal');
 
-//variables... probably to use later
+let previousValue = '';
+let currentValue = '';
 
-
-
-//event listeners
-// functions to populate display
-
-//function for getting the first operand;
+let num1 = '';
+let num2 = '';
 
 
-//for getting the first
 operands.forEach((operand)=>{
-    let displayValue = display.textContent;
-    let operand1;
-    let operand2;
-    let operator;
-    operand.addEventListener('click', (e)=>{
-        operand1 += e.target.value;
-        display.textContent = operand1;
-    });
-
-
-    operand.addEventListener('click', (e)=>{
-        operand2 += e.target.value;
-        display.textContent = operand2;
-    });
-
-    operators.forEach((operator)=>{
-        operator.addEventListener('click', (e)=>{
-            if(operator.value == '+'){
-                display.textContent =+ add(2,3);
-            }
-        })
-    })
-    clearButton.addEventListener('click', ()=>{
-        display.textContent = displayValue;
+    operand.addEventListener('click', ()=>{
+        display.textContent += operand.value;
+        currentValue = display.innerText;
     })
 })
 
+operators.forEach((operator)=>{
+    operator.addEventListener('click', (e)=>{
+        display.textContent += e.target.value;
+        currentValue = screen.innerText;
+    })
+})
+equal.addEventListener('click', ()=>{
+    let x = eval('(' + display.textContent + ')')
+    display.textContent = x;
+})
 
-//first forEach and then the eventlistener 
+
+clear.addEventListener('click', ()=>{
+    display.textContent = '';
+});
 
 
 //functions 
         //main operate function
-    function operate(a,operator,b){
-        if(operator == '+'){
-            return add(a,b);
+    function operate(){
+        let num1 = parseInt(num1);
+        let num2 = parseInt(num2);
+        if(operators === '+'){
+            add(a,b);
         }
-        if(operator == '-'){
-            return substract(a,b);
+        if(operators === '-'){
+            substract(a,b);
         }
-        if(operator == '*'){
-            return multiply(a,b);
+        if(operators === '*'){
+            multiply(a,b);
         }
-        if(operator == '/'){
-            return divide(a,b);
+        if(operators === '/'){
+            divide(a,b);
         }
-        if(operator == 'v'){
-            return rootSquare(a)
+        if(operators == 'v'){
+            rootSquare(a)
         }
         function add(a,b){return a + b}
         function substract(a,b){return a - b}

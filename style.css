@@ -27,6 +27,8 @@ text-align: center;
     padding: 5px;
 }
 .display{
+    
+    overflow: hidden;
     width: 285px;
     background-color: rgb(102, 152, 93);
     height: 50px;
@@ -34,6 +36,7 @@ text-align: center;
     font-size: 38px;
     margin: 5px;
     resize: none;
+    
 }
 .bContainer{
     display: grid;
