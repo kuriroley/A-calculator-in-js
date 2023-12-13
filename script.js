@@ -9,54 +9,68 @@ const equal = document.querySelector('.equal');
 let previousValue = '';
 let currentValue = '';
 
-let num1 = '';
-let num2 = '';
+let operand1 = '';
+let operand2 = '';
+let op = '';
+
+let disStart = display.textContent;
 
 
 operands.forEach((operand)=>{
-    operand.addEventListener('click', ()=>{
-        display.textContent += operand.value;
-        currentValue = display.innerText;
+    operand.addEventListener('click', (e)=>{
+        if(op === ''){
+          operand1 += e.target.value;
+          display.textContent = operand1;
+        } else{
+          operand2 += e.target.value;
+          display.textContent = operand2;
+        }
+        
     })
 })
 
 operators.forEach((operator)=>{
     operator.addEventListener('click', (e)=>{
-        display.textContent += e.target.value;
-        currentValue = screen.innerText;
+        if(operand1 !== ''){
+            op = e.target.value;
+            display.textContent = op;
+        }
     })
 })
 equal.addEventListener('click', ()=>{
-    let x = eval('(' + display.textContent + ')')
-    display.textContent = x;
+    operate(operand1,operand2);
 })
 
-
 clear.addEventListener('click', ()=>{
-    display.textContent = '';
+    display.textContent = ''
+    operand1 = '';
+    operand2 = '';
+    op = '';
 });
 
 
 //functions 
         //main operate function
-    function operate(){
-        let num1 = parseInt(num1);
-        let num2 = parseInt(num2);
-        if(operators === '+'){
-            add(a,b);
+    function operate(a,b){
+        a = parseInt(a);
+        b = parseInt(b);
+        let result;
+        if(op === '+'){
+            result = add(a,b);
         }
-        if(operators === '-'){
-            substract(a,b);
+        if(op === '-'){
+            result = substract(a,b);
         }
-        if(operators === '*'){
-            multiply(a,b);
+        if(op === '*'){
+            result = multiply(a,b);
         }
-        if(operators === '/'){
-            divide(a,b);
+        if(op === '/'){
+            result = divide(operand1,operand2);
         }
-        if(operators == 'v'){
-            rootSquare(a)
+        if(op == 'v'){
+            result = rootSquare(operand1);
         }
+        display.textContent = result;
         function add(a,b){return a + b}
         function substract(a,b){return a - b}
         function multiply(a,b){return a * b}

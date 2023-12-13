@@ -1,7 +1,9 @@
 *{
     margin: 0;
     padding: 2px;
-    background-color: gray;
+}
+body{
+    background-color: rgb(16, 7, 70);
 }
 .title{
 max-width: 100%;
