@@ -6,15 +6,9 @@ const operands = document.querySelectorAll('.operand');
 const operators = document.querySelectorAll('.operator');
 const equal = document.querySelector('.equal');
 
-let previousValue = '';
-let currentValue = '';
-
 let operand1 = '';
 let operand2 = '';
 let op = '';
-
-let disStart = display.textContent;
-
 
 operands.forEach((operand)=>{
     operand.addEventListener('click', (e)=>{
@@ -41,36 +35,45 @@ equal.addEventListener('click', ()=>{
     operate(operand1,operand2);
 })
 
-clear.addEventListener('click', ()=>{
+clear.addEventListener('click', clearAll);
+
+function clearAll(){
     display.textContent = ''
     operand1 = '';
     operand2 = '';
     op = '';
-});
-
+}
 
 //functions 
         //main operate function
     function operate(a,b){
-        a = parseInt(a);
-        b = parseInt(b);
-        let result;
-        if(op === '+'){
+        if(a !== '' && b !== '' && op !== ''){
+            a = parseInt(a);
+            b = parseInt(b);
+            let result;
+
+            if(op === '+'){
             result = add(a,b);
-        }
-        if(op === '-'){
+            }
+            if(op === '-'){
             result = substract(a,b);
-        }
-        if(op === '*'){
+            }
+            if(op === '*'){
             result = multiply(a,b);
+            }
+            if(op === '/'){
+                if(a || b == 0){
+                    display.textContent = '0000000000';
+                } else{
+                    result = divide(operand1,operand2);
+                }
+            }
+            if(op == 'v'){
+                result = rootSquare(operand1);
+            }
+            display.textContent = result;
         }
-        if(op === '/'){
-            result = divide(operand1,operand2);
-        }
-        if(op == 'v'){
-            result = rootSquare(operand1);
-        }
-        display.textContent = result;
+        
         function add(a,b){return a + b}
         function substract(a,b){return a - b}
         function multiply(a,b){return a * b}
