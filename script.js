@@ -9,6 +9,7 @@ const equal = document.querySelector('.equal');
 let operand1 = '';
 let operand2 = '';
 let op = '';
+let result;
 
 operands.forEach((operand)=>{
     operand.addEventListener('click', (e)=>{
@@ -16,9 +17,9 @@ operands.forEach((operand)=>{
         //an event listener
         if(op === ''){
           // if the operator is empty add val to operand 1
-          operand1 += e.target.value;
-          //display value is updated
-          display.textContent = operand1;
+            operand1 += e.target.value;
+            //display value is updated
+            display.textContent = operand1;
         } else{
             // else if it is not empty, the value to operand 2 should be stored
           operand2 += e.target.value;
@@ -28,6 +29,7 @@ operands.forEach((operand)=>{
     })
 })
 
+
 operators.forEach((operator)=>{
     operator.addEventListener('click', (e)=>{
         //a condition for avoiding using first an operator
@@ -36,7 +38,6 @@ operators.forEach((operator)=>{
             op = e.target.value;
             display.textContent = op;
         }
-
     })
 })
 
@@ -44,11 +45,11 @@ equal.addEventListener('click', ()=>{
     //on clicking equal, the operate function begins
     operate(operand1,operand2);
 })
-
 //an event for clearing all inside the calculator
 clear.addEventListener('click', clearAll);
 
 function clearAll(){
+    display.textContent = '';
     display.textContent = '0';
     operand1 = '';
     operand2 = '';
@@ -62,7 +63,6 @@ function operate(a,b){
         //b is turned into an integer
             b = parseInt(b);
         //the result value is created
-            let result;
         //comparing if certain operator is op
             if(op === '+'){
             result = add(a,b);
@@ -84,9 +84,14 @@ function operate(a,b){
             if(op == 'v'){
                 result = rootSquare(operand1);
             }
+            //the display should be cleared
+
+            clearAll();
+            //once has been cleared, only the first operand will be shown
+            operand1 = result.toString();
+            //the result is shown and at the same time the result is taken as the first operand
             display.textContent = result;
         }
-        
         function add(a,b){return a + b}
         function substract(a,b){return a - b}
         function multiply(a,b){return a * b}
