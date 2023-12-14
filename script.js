@@ -12,46 +12,58 @@ let op = '';
 
 operands.forEach((operand)=>{
     operand.addEventListener('click', (e)=>{
+        //using conditionals for storing different values when using 
+        //an event listener
         if(op === ''){
+          // if the operator is empty add val to operand 1
           operand1 += e.target.value;
+          //display value is updated
           display.textContent = operand1;
         } else{
+            // else if it is not empty, the value to operand 2 should be stored
           operand2 += e.target.value;
+          //display value is updated
           display.textContent = operand2;
         }
-        
     })
 })
 
 operators.forEach((operator)=>{
     operator.addEventListener('click', (e)=>{
+        //a condition for avoiding using first an operator
+        //check if there is not an empty operand
         if(operand1 !== ''){
             op = e.target.value;
             display.textContent = op;
         }
+
     })
 })
+
 equal.addEventListener('click', ()=>{
+    //on clicking equal, the operate function begins
     operate(operand1,operand2);
 })
 
+//an event for clearing all inside the calculator
 clear.addEventListener('click', clearAll);
 
 function clearAll(){
-    display.textContent = ''
+    display.textContent = '0';
     operand1 = '';
     operand2 = '';
     op = '';
 }
-
-//functions 
-        //main operate function
-    function operate(a,b){
-        if(a !== '' && b !== '' && op !== ''){
+function operate(a,b){
+    //a condition for making sure that there are no empty values
+            if(a !== '' && b !== '' && op !== ''){
+        //a is turned into an integer
             a = parseInt(a);
+        //b is turned into an integer
             b = parseInt(b);
+        //the result value is created
             let result;
-
+        //comparing if certain operator is op
             if(op === '+'){
             result = add(a,b);
             }
@@ -62,8 +74,9 @@ function clearAll(){
             result = multiply(a,b);
             }
             if(op === '/'){
-                if(a || b == 0){
-                    display.textContent = '0000000000';
+                if(b == 0){
+                    alert(`Can't divide by zero. Try again`);
+                    document.location.reload();
                 } else{
                     result = divide(operand1,operand2);
                 }
@@ -79,4 +92,4 @@ function clearAll(){
         function multiply(a,b){return a * b}
         function divide(a,b){return a / b}
         function rootSquare(a){return Math.sqrt(a)}
-    }
+}
