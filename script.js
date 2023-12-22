@@ -28,6 +28,23 @@ operands.forEach((operand)=>{
         }
     })
 })
+//keyboard support for operands
+window.addEventListener('keydown',(e) =>{
+    let keyValue = e.key;
+    if((keyValue > -1 && keyValue < 10) || keyValue === '.'){
+        if(op === ''){
+            // if the operator is empty add val to operand 1
+              operand1 += keyValue;
+              //display value is updated
+              display.textContent = operand1;
+          } else{
+              // else if it is not empty, the value to operand 2 should be stored
+            operand2 += keyValue;
+            //display value is updated
+            display.textContent = operand2;
+          }
+    }
+})
 
 
 operators.forEach((operator)=>{
