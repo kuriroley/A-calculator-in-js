@@ -49,6 +49,10 @@ window.addEventListener('keydown',(e) =>{
 //keyboard support for operators
 window.addEventListener('keydown', (e) =>{
     let keyValue = e.key;
+    
+    if(operand1 !== ""){
+
+    }
 })
 
 
