@@ -46,6 +46,11 @@ window.addEventListener('keydown',(e) =>{
     }
 })
 
+//keyboard support for operators
+window.addEventListener('keydown', (e) =>{
+    let keyValue = e.key;
+})
+
 
 operators.forEach((operator)=>{
     operator.addEventListener('click', (e)=>{

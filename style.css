@@ -67,3 +67,7 @@ button:hover{
     height: 20px;
     font-size: 15px;
 }
+.credits a{
+    text-decoration: none;
+    color: white;
+}
